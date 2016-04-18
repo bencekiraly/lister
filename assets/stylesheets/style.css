@@ -1,0 +1,5 @@
+.menu > p {
+    display: inline-block;
+    background-color: black;
+    color: white;
+}
