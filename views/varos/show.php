@@ -11,19 +11,17 @@
         public function getData(){
             if(empty($this->data)){
                 echo "Nincs felvéve város.";
+            }else{
+                foreach($this->data as $numrow => $row){
+                    echo "<form onsubmit=\"return modifyCity('".$_GET['megye']."','".$numrow."',varosnev.value)\" action=\"\">";
+                    echo "<input type=\"text\" name=\"varosnev\" value=\"".$row."\">";
+                    echo "<input type=\"submit\" value=\"Mentés\">";
+                    echo "<button type=\"button\" onclick=\"return deleteCity('".$_GET['megye']."','".$numrow."')\">Törlés</button>";
+                    echo "<button type=\"button\"  onclick=\"showCounty('".$_GET['megye']."')\">Mégsem</button>";
+                    echo "</select>";
+                    echo "</form>";
+                }   
             }
-            foreach($this->data as $numrow => $row){
-                echo "<form action=\"index.php\" method=\"get\">";
-                echo "<input type=\"hidden\" name=\"p\" value=\"varos\">";
-                echo "<input type=\"hidden\" name=\"f\" value=\"update\">";
-                echo "<input type=\"hidden\" name=\"megye\" value=\"".$_GET['megye']."\">";
-                echo "<input type=\"hidden\" name=\"id\" value=\"".$numrow."\">";
-                echo "<input type=\"text\" name=\"varosnev\" value=\"".$row."\">";
-                echo "<input type=\"submit\" value=\"Elküldés\">";
-                echo "</select>";
-                echo "</form>";  
-                echo "<a href=\"index.php?p=varos&f=delete&id=".$numrow."&megye=".$_GET['megye']."\">Törlés</a>";
-            }       
         }
         
     }

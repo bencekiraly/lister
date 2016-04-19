@@ -53,10 +53,8 @@
                 include "views/varos/".$this->action.".php";
                 $this->view = new View();
                 $this->view->getData();
-            }else{
+            }else{ 
                 $result = $this->db->query($this->q);
-                header("Location: index.php?p=megye&f=show&id=".$this->megye);
-                exit;
             }
         }
                 

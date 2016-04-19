@@ -9,11 +9,9 @@
         }
         
         public function getData(){
-            echo "<form action=\"index.php\" method=\"get\">";
-            echo "<input type=\"hidden\" name=\"p\" value=\"megye\">";
-            echo "<input type=\"hidden\" name=\"f\" value=\"show\">";
-            echo "<select name=\"id\" onchange=\"this.form.submit()\">";
-            echo "<option>Válassz megyét!</option>";
+            echo "<form>";
+            echo "<select name=\"id\" onchange=\"showCounty(this.value)\">";
+            echo "<option selected disabled>Válassz megyét!</option>";
             foreach($this->data as $numrow => $row){
                 echo "<option value=\"".$numrow."\">".$row."</option>";
             }
