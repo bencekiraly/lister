@@ -47,6 +47,7 @@ function addCity(countynum) {
     };
     xmlhttp.open("GET","index.php?p=varos&f=newd&megye="+countynum,true);
     xmlhttp.send();
+    return false;
 }
 
 function newdCity(countynum,cityname){

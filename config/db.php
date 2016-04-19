@@ -11,6 +11,7 @@
             
             $conn = new mysqli($this->address,$this->username,$this->password,$this->dbname);
             $this->conn = $conn;
+            $this->conn->set_charset("utf8");
             $this->error();
         }
         

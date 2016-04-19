@@ -18,7 +18,9 @@
                 echo "</div>";
             }
             echo "<div id=\"addcity\">";
-            echo "<p onclick=\"addCity(".$_GET['id'].")\" >Felvétel</p>";
+            echo "<form onsubmit=\"return addCity(".$_GET['id'].")\">";
+            echo "<input type=\"submit\" value=\"Város hozzáadása\">";
+            echo "</form>";
             echo "</div>";
         }
         
