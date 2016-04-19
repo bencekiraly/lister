@@ -10,12 +10,19 @@
         
         public function getData(){
             if(empty($this->data)){
-                echo "Nincs felvéve város.</br>";
-            }
-            foreach($this->data as $numrow => $row){
-                echo "<div id=\"varos".$numrow."\">";
-                echo "<p onclick=\"showCity('varos".$numrow."',".$numrow.",".$_GET['id'].")\">".$row."</p>";
+                echo "<citylist>";
+                echo "<div>";
+                echo "<p id=\"citynf\">Nincs felvéve város.</p></br>";
                 echo "</div>";
+                echo "</citylist>";
+            }else{
+                echo "<citylist>";
+                foreach($this->data as $numrow => $row){
+                    echo "<div id=\"varos".$numrow."\">";
+                    echo "<p onclick=\"showCity('varos".$numrow."',".$numrow.",".$_GET['id'].")\">".$row."</p>";
+                    echo "</div>";
+                }
+                echo "</citylist>";
             }
             echo "<div id=\"addcity\">";
             echo "<form onsubmit=\"return addCity(".$_GET['id'].")\">";

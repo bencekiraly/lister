@@ -9,14 +9,14 @@
         }
         
         public function getData(){
-            echo "<form>";
+            echo "<form id=\"countylist\">";
             echo "<select name=\"id\" onchange=\"showCounty(this.value)\">";
             echo "<option selected disabled>Válassz megyét!</option>";
             foreach($this->data as $numrow => $row){
                 echo "<option value=\"".$numrow."\">".$row."</option>";
             }
             echo "</select>";
-            echo "</form>";          
+            echo "</form>";
         }
         
     }

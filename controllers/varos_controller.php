@@ -36,7 +36,7 @@
         
         function action(){
             switch ($this->func){
-                case "index": $this->index(); break;
+                //case "index": $this->index(); break;
                 case "show": $this->show(); break;
                 case "newd": $this->newd(); break;
                 case "create": $this->create(); break;
@@ -46,9 +46,9 @@
             }
         }
         
-        function index(){
+        /*function index(){
             $this->model();
-        }
+        }*/
         
         function show(){
             $this->model();

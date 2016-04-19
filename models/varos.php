@@ -29,7 +29,7 @@
         
         private function getData(){
             switch ($this->action){
-                case "index": $this->q = "SELECT * FROM varos"; break;
+                //case "index": $this->q = "SELECT * FROM varos"; break;
                 case "show": $this->q = "SELECT * FROM varos WHERE varosid=".$this->id; break;
                 case "newd": $this->q = ""; break;
                 case "update": $this->q = "UPDATE varos SET varosnev=\"".$this->varosnev."\" WHERE varosid=".$this->id; break;
@@ -41,7 +41,7 @@
         }
         
         public function dataToView(){
-            if($this->action == "index" || $this->action == "show"){
+            if(/*$this->action == "index" || */$this->action == "show"){
                 include "views/varos/".$this->action.".php";
                 $this->view = new View();
                 $result = $this->db->query($this->q);
